@@ -39,8 +39,8 @@ def get_dataloader(args):
         amos_train_dataset = AMOS(args, args.data_path, transform = None, transform_msk= None, mode = 'Training', prompt=args.prompt)
         amos_test_dataset = AMOS(args, args.data_path, transform = None, transform_msk= None, mode = 'Test', prompt=args.prompt)
 
-        nice_train_loader = DataLoader(amos_train_dataset, batch_size=1, shuffle=True, num_workers=8, pin_memory=True)
-        nice_test_loader = DataLoader(amos_test_dataset, batch_size=1, shuffle=False, num_workers=1, pin_memory=True)
+        nice_train_loader = DataLoader(amos_train_dataset, batch_size=1, shuffle=True, num_workers=0, pin_memory=True)
+        nice_test_loader = DataLoader(amos_test_dataset, batch_size=1, shuffle=False, num_workers=0, pin_memory=True)
         '''end'''
 
     else:
